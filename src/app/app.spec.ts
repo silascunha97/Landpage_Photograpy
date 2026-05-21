@@ -14,10 +14,11 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('should render the landing page headline', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Landpage_Dan');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Daniel');
+    expect(compiled.textContent).toContain('Services & rates');
   });
 });
