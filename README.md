@@ -2,6 +2,20 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
 
+## Deploy on Netlify
+
+The repository includes `netlify.toml`, so Netlify can detect the production build settings automatically.
+
+```bash
+yarn build
+```
+
+- Build command: `yarn build`
+- Publish directory: `dist/Landpage_Dan/browser`
+- Node version: `24`
+
+The Netlify config also adds SPA fallback routing and long-lived cache headers for generated JS, CSS, and optimized image assets.
+
 ## Development server
 
 To start a local development server, run:
@@ -34,7 +48,7 @@ To build the project run:
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+This will compile your project and store the build artifacts in the `dist/Landpage_Dan/browser` directory. By default, the production build optimizes your application for performance and speed.
 
 ## Running unit tests
 
