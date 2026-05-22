@@ -7,14 +7,9 @@
     class="sticky top-0 z-50 border-b border-[var(--line)] bg-[color-mix(in_srgb,var(--page-bg)_88%,transparent)] backdrop-blur-xl"
   >
     <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
-      <a href="#top" class="micro-font text-[10px] uppercase text-[var(--ink)]">
-        [ FRAME_V3 ] <span class="text-[var(--hot)]">.</span>
-      </a>
+      <a href="#top" class="micro-font text-[10px] uppercase text-[var(--ink)]"> </a>
 
       <div class="flex items-center gap-4">
-        <a href="#work" class="micro-font text-[10px] uppercase text-[var(--ink)] transition hover:text-[var(--accent)]">
-          Menu
-        </a>
         <button
           type="button"
           class="theme-toggle grid size-11 place-items-center rounded-full bg-[var(--accent)] text-[var(--toggle-ink)] shadow-[0_0_26px_var(--accent-glow)] transition hover:scale-105"
@@ -47,35 +42,68 @@
     </div>
   </header>
 
-  <section id="top" class="mx-auto grid max-w-7xl gap-10 px-5 pb-16 pt-14 sm:px-8 sm:pb-24 sm:pt-20 lg:grid-cols-[0.95fr_1.05fr] lg:px-12">
+  <section
+    id="top"
+    class="mx-auto grid max-w-7xl gap-10 px-5 pb-16 pt-14 sm:px-8 sm:pb-24 sm:pt-20 lg:grid-cols-[0.95fr_1.05fr] lg:px-12"
+  >
     <div class="flex flex-col items-start">
-       <!---- <p class="micro-font text-xs uppercase text-[var(--hot)]">Mobile draft / 390px</p> -->
-      <h1 class="display-font mt-4 text-[4.4rem] uppercase leading-[0.77] text-[var(--ink)] sm:text-[7.8rem] lg:text-[9rem]">
-        Daniel
+      <!---- <p class="micro-font text-xs uppercase text-[var(--hot)]">Mobile draft / 390px</p> -->
+      <h1
+        class="display-font mt-4 text-[4.4rem] uppercase leading-[0.77] text-[var(--ink)] sm:text-[5.5rem] lg:text-[7.5rem]"
+      >
+        Carlosf.x
         <span class="block">
-          <span class="neon-word text-[var(--accent)] text-[clamp(1.5rem,4vw+0.5rem,3.5rem)]">Fotografo</span>
+          <span class="neon-word text-[var(--accent)] text-[clamp(1.5rem,4vw+0.5rem,3.5rem)]"
+            >Fotografo</span
+          >
         </span>
       </h1>
       <p class="mt-7 max-w-sm text-base leading-7 text-[var(--muted)] sm:text-lg">
-        Documentação visual sob uma lente redutiva. Uma investigação sobre estrutura, luz e geometria.
+        Documentação visual sob uma lente redutiva. Uma investigação sobre estrutura, luz e
+        geometria.
       </p>
       <a
         [href]="whatsappLink"
         target="_blank"
-        class="neon-button micro-font mt-8 inline-flex min-h-14 items-center justify-center bg-[var(--accent)] px-9 text-[10px] uppercase text-[var(--button-ink)] transition hover:-translate-y-0.5"
+        rel="noopener"
+        class="neon-button micro-font mt-8 inline-flex min-h-14 items-center justify-center gap-3 bg-[var(--accent)] px-9 text-[10px] uppercase text-[var(--button-ink)] transition hover:-translate-y-0.5"
       >
-        <i class="fab fa-whatsapp text-xl"></i>
+        <svg aria-hidden="true" class="size-5 shrink-0" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M20 11.5a8 8 0 0 1-11.9 7L4 19.8l1.3-4A8 8 0 1 1 20 11.5Z"
+            stroke="currentColor"
+            stroke-linejoin="round"
+            stroke-width="1.7"
+          />
+          <path
+            d="M8.9 8.7c.2-.4.4-.5.7-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.4.5c.7 1.1 1.6 2 2.8 2.6l.5-.5c.2-.2.4-.2.7-.1l1.5.7c.3.1.4.3.4.6v.5c0 .3-.2.6-.5.7-.5.2-1.2.3-1.9.1-2.7-.8-4.8-2.8-5.7-5.4-.2-.7-.2-1.3.1-1.8Z"
+            fill="currentColor"
+          />
+        </svg>
         Entrar em Contato
       </a>
     </div>
 
-    <figure class="hero-frame min-h-[440px] overflow-hidden border border-[var(--line)] bg-[var(--panel)] lg:min-h-[620px]">
-      <img
-        src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1500&q=82"
-        alt="Artist portrait framed by strong studio geometry"
-        class="h-full w-full object-cover"
-      />
-      <figcaption class="micro-font absolute bottom-5 left-5 text-[10px] uppercase text-[var(--image-label)]">
+    <figure
+      class="hero-frame min-h-[440px] overflow-hidden border border-[var(--line)] bg-[var(--panel)] lg:min-h-[620px]"
+    >
+      <picture class="block h-full w-full">
+        <source [srcset]="heroImage.avifSrc" type="image/avif" />
+        <source [srcset]="heroImage.webpSrc" type="image/webp" />
+        <img
+          [src]="heroImage.src"
+          [alt]="heroImage.alt"
+          [attr.width]="heroImage.width"
+          [attr.height]="heroImage.height"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          class="h-full w-full object-cover"
+        />
+      </picture>
+      <figcaption
+        class="micro-font absolute bottom-5 left-5 text-[10px] uppercase text-[var(--image-label)]"
+      >
         HERO_01 / ARTIST STUDY
       </figcaption>
     </figure>
@@ -89,7 +117,7 @@
             [ {{ collection.number }} ] {{ collection.title }}
           </h2>
 
-          <div class="flex items-center gap-3">
+          <div class="carousel-tools flex items-center gap-3">
             <span class="micro-font hidden text-[10px] uppercase text-[var(--hot)] sm:inline">
               {{ collection.mode }} -
             </span>
@@ -100,7 +128,13 @@
               (click)="moveCarousel(carouselViewport, collection.id, collection.images.length, -1)"
             >
               <svg aria-hidden="true" class="size-4" viewBox="0 0 24 24" fill="none">
-                <path d="M15 5 8 12l7 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                <path
+                  d="M15 5 8 12l7 7"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.8"
+                />
               </svg>
             </button>
             <p class="micro-font w-12 text-center text-[10px] uppercase text-[var(--hot)]">
@@ -113,38 +147,58 @@
               (click)="moveCarousel(carouselViewport, collection.id, collection.images.length, 1)"
             >
               <svg aria-hidden="true" class="size-4" viewBox="0 0 24 24" fill="none">
-                <path d="m9 5 7 7-7 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                <path
+                  d="m9 5 7 7-7 7"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.8"
+                />
               </svg>
             </button>
           </div>
         </div>
 
-        <div #carouselViewport class="carousel-viewport">
-          @for (image of collection.images; track image.code; let imageIndex = $index) {
+        <div
+          #carouselViewport
+          class="carousel-viewport"
+          [attr.data-collection-id]="collection.id"
+          (scroll)="handleCarouselScroll(carouselViewport, collection.id, collection.images.length)"
+        >
+          @for (image of collection.loopedImages; track image.loopIndex) {
             <figure
               class="carousel-card group"
-              [attr.data-slide-index]="imageIndex"
-              [class.is-active]="activeSlide(collection.id) === imageIndex"
+              [attr.data-loop-index]="image.loopIndex"
+              [attr.data-slide-index]="image.originalIndex"
+              [attr.data-clone]="image.isClone"
+              [class.is-active]="activeSlide(collection.id) === image.originalIndex"
             >
-              <img [src]="image.src" [alt]="image.alt" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-[1.035]" />
-              <figcaption class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-black/75 to-transparent p-5">
+              <picture class="block h-full w-full">
+                <source [srcset]="image.avifSrc" type="image/avif" />
+                <source [srcset]="image.webpSrc" type="image/webp" />
+                <img
+                  [src]="image.src"
+                  [alt]="image.alt"
+                  [attr.width]="image.width"
+                  [attr.height]="image.height"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover transition duration-700 group-hover:scale-[1.035]"
+                />
+              </picture>
+              <figcaption
+                class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-black/75 to-transparent p-5"
+              >
                 <span class="micro-font text-[10px] uppercase text-white/80">{{ image.code }}</span>
-                <span class="text-right text-xs uppercase tracking-[0.12em] text-white/80">{{ image.caption }}</span>
+                <span class="text-right text-xs uppercase tracking-[0.12em] text-white/80">{{
+                  image.caption
+                }}</span>
               </figcaption>
             </figure>
           }
         </div>
 
-        @if (collection.id === 'portraits') {
-          <a
-            href="mailto:hello@frameandform.studio"
-            class="inquire-bar micro-font absolute inset-x-5 top-[52%] z-10 flex min-h-16 items-center justify-center bg-[var(--hot)] text-[10px] uppercase text-white shadow-[0_0_34px_var(--hot-glow)] sm:inset-x-14 lg:inset-x-24"
-          >
-            Inquire now
-          </a>
-        }
-
-        <div class="mt-5 flex justify-center gap-2">
+        <div class="carousel-dots mt-5 flex justify-center gap-2">
           @for (image of collection.images; track image.code; let dotIndex = $index) {
             <button
               type="button"
@@ -160,36 +214,24 @@
   </section>
 
   <section class="border-y border-[var(--line)] bg-[var(--bio-bg)]">
-    <div class="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[0.8fr_1.2fr] lg:px-12">
+    <div
+      class="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[0.8fr_1.2fr] lg:px-12"
+    >
       <p class="micro-font text-xs uppercase text-[var(--hot)]">[ Bio ]</p>
       <p class="max-w-3xl text-2xl leading-tight text-[var(--ink)] sm:text-4xl">
-        Uma abordagem minimalista e profunda para a fotografia de eventos, esporte e lazer. Operando entre a precisão técnica e a sensibilidade humana.
+        Uma abordagem minimalista e profunda para a fotografia de eventos, esporte e lazer. Operando
+        entre a precisão técnica e a sensibilidade humana.
       </p>
-    </div>
-  </section>
-
-  <section class="bg-[var(--rates-bg)] text-[var(--rates-ink)]">
-    <div class="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:px-12">
-      <p class="micro-font mb-10 text-center text-xs uppercase text-[var(--accent)]">Services & rates</p>
-
-      <div class="mx-auto max-w-4xl">
-        @for (service of services; track service.title) {
-          <div class="grid gap-4 border-b border-white/20 py-6 sm:grid-cols-[1fr_auto] sm:items-center">
-            <div>
-              <h3 class="display-font text-2xl uppercase leading-none text-white">{{ service.title }}</h3>
-              <p class="micro-font mt-2 text-[10px] uppercase text-white/45">{{ service.detail }}</p>
-            </div>
-            <p class="micro-font text-xs uppercase text-[var(--accent)]">[ {{ service.price }} ]</p>
-          </div>
-        }
-      </div>
     </div>
   </section>
 
   <section class="border-b border-[var(--line)] bg-[var(--quote-bg)]">
     <div class="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:px-12">
-      <blockquote class="quote-mark max-w-3xl border-l-2 border-[var(--accent)] pl-6 text-lg italic leading-7 text-[var(--ink)]">
-        "A estrutura e a profundidade do olhar mudaram a forma como enxergamos a nossa própria identidade de marca."
+      <blockquote
+        class="quote-mark max-w-3xl border-l-2 border-[var(--accent)] pl-6 text-lg italic leading-7 text-[var(--ink)]"
+      >
+        "A estrutura e a profundidade do olhar mudaram a forma como enxergamos a nossa própria
+        identidade."
         <cite class="micro-font mt-5 block text-[10px] uppercase not-italic text-[var(--hot)]">
           - Carlos Daniel, Fotografo.
         </cite>
@@ -198,21 +240,24 @@
   </section>
 
   <footer class="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:px-12">
-    <h2 class="display-font text-5xl uppercase leading-none text-[var(--ink)] sm:text-7xl">Fotografando momentos importes.</h2>
-    <a href="mailto:hello@frameandform.studio" class="mt-7 inline-block border-b border-[var(--accent)] pb-1 text-sm text-[var(--accent)]">
-      hello&#64;frameandform.studio
-    </a>
+    <h2 class="display-font text-5xl uppercase leading-none text-[var(--ink)] sm:text-7xl">
+      Fotografando momentos importes.
+    </h2>
 
-    <nav class="micro-font mt-14 flex flex-wrap gap-x-9 gap-y-4 text-[10px] uppercase text-[var(--muted)]">
-      <a href="#work" class="transition hover:text-[var(--accent)]">Instagram</a>
-      <a href="#work" class="transition hover:text-[var(--accent)]">Behance</a>
-      <a href="#work" class="transition hover:text-[var(--accent)]">Linkedin</a>
-      <a href="#work" class="transition hover:text-[var(--accent)]">Vogue portfolio</a>
+    <nav
+      class="micro-font mt-14 flex flex-wrap gap-x-9 gap-y-4 text-[10px] uppercase text-[var(--muted)]"
+    >
+      <a
+        href="https://www.instagram.com/_clzinn047?igsh=M2wwZnhyanRtc2Vi"
+        class="transition hover:text-[var(--accent)]"
+        >Instagram</a
+      >
     </nav>
 
-    <div class="micro-font mt-16 flex flex-wrap justify-between gap-4 border-t border-[var(--line)] pt-8 text-[10px] uppercase text-[var(--muted)]">
-      <p>(c) 2026 FF_Studio</p>
-      <p>390px_mobile_wireframe</p>
+    <div
+      class="micro-font mt-16 flex flex-wrap justify-between gap-4 border-t border-[var(--line)] pt-8 text-[10px] uppercase text-[var(--muted)]"
+    >
+      <p>Desenvolvidor por - <strong>Silas Augusto da Cunha </strong></p>
     </div>
   </footer>
 </main>
