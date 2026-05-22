@@ -16,6 +16,10 @@ yarn build
 
 The Netlify config also adds SPA fallback routing and long-lived cache headers for generated JS, CSS, and optimized image assets.
 
+## Credits
+
+- Favicon: [Photographer icon](https://www.flaticon.com/free-icon/photographer_8540881) by Freepik from Flaticon.
+
 ## Development server
 
 To start a local development server, run:
